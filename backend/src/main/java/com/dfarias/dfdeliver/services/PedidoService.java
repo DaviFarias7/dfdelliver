@@ -18,23 +18,23 @@ import com.dfarias.dfdeliver.repositories.ProdutoRepository;
 
 @Service
 public class PedidoService {
-	
+
 	@Autowired
 	private PedidoRepository repository;
-	
+
 	@Autowired
 	private ProdutoRepository produtoRepository;
-	
+
 	@Transactional(readOnly = true)
-	public List<PedidoDTO> findAll(){
+	public List<PedidoDTO> findAll() {
 		List<Pedido> list = repository.encontrarPedidosComProdutos();
 		return list.stream().map(x -> new PedidoDTO(x)).collect(Collectors.toList());
 	}
-	
+
 	@Transactional
-	public PedidoDTO insert(PedidoDTO dto){
-		Pedido pedido = new Pedido(null, dto.getEndereco(), dto.getLatitude(), dto.getLongitude(), 
-				Instant.now(), StatusDoPedido.PENDENTE);
+	public PedidoDTO insert(PedidoDTO dto) {
+		Pedido pedido = new Pedido(null, dto.getEndereco(), dto.getLatitude(), dto.getLongitude(), Instant.now(),
+				StatusDoPedido.PENDENTE);
 		for (ProdutoDTO p : dto.getProdutos()) {
 			Produto produto = produtoRepository.getOne(p.getId());
 			pedido.getProdutos().add(produto);
@@ -42,5 +42,12 @@ public class PedidoService {
 		pedido = repository.save(pedido);
 		return new PedidoDTO(pedido);
 	}
-	
+
+	@Transactional
+	public PedidoDTO setEntregue(Long id) {
+		Pedido pedido = repository.getOne(id);
+		pedido.setStatus(StatusDoPedido.ENTREGUE);
+		pedido = repository.save(pedido);
+		return new PedidoDTO(pedido);
+	}
 }

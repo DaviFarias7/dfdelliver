@@ -1,16 +1,9 @@
-import React from 'react';
 import './App.css';
-import Home from './Home';
-import Navbar from './Navbar';
-
+import AppRoutes from './Routes';
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Home />
-
-    </>
+    <AppRoutes />
   );
 }
 

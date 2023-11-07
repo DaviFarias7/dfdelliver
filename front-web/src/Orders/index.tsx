@@ -3,10 +3,10 @@ import { toast } from 'react-toastify';
 import { fetchProducts, saveOrder } from '../api';
 import Footer from '../Footer';
 import { checkIsSelected } from './helpers';
-import OrderLocation from './OrderLocation';
-import OrderSumary from './OrderSummary';
-import ProductsList from './ProductsList';
-import StepsHeader from './StepsHeader';
+import OrderLocation from './Orderlocation/OrderLocation';
+import OrderSumary from './OrderSummary/OrderSummary';
+import ProductsList from './ProductList/ProductsList';
+import StepsHeader from './StepsHeader/StepsHeader';
 import './styles.css';
 import { OrderLocationData, Product } from './Types';
 

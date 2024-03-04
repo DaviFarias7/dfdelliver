@@ -7,3 +7,15 @@
 
 
 ![tela produto selecionado](https://github.com/DaviFarias7/dfdelliver/assets/86566715/d8ab2042-056e-45ed-b298-0dd57be2e621)
+
+
+![total do pedido](https://github.com/DaviFarias7/dfdelliver/assets/86566715/54247399-a5c2-46b6-9e94-6e72df39ea89)
+
+
+
+![total pedido finalizado](https://github.com/DaviFarias7/dfdelliver/assets/86566715/7aeaa919-bfb3-47ab-9758-e7326475e941)
+
+
+
+
+
